@@ -1,0 +1,1308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DocOrganizerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DocOrganizerModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="DocOrganizerModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CategoryTags" EntityType="DocOrganizerModel.Store.CategoryTags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentCategories" EntityType="DocOrganizerModel.Store.DocumentCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Documents" EntityType="DocOrganizerModel.Store.Documents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentTags" EntityType="DocOrganizerModel.Store.DocumentTags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmailSource" EntityType="DocOrganizerModel.Store.EmailSource" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PathCategories" EntityType="DocOrganizerModel.Store.PathCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Paths" EntityType="DocOrganizerModel.Store.Paths" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PathTags" EntityType="DocOrganizerModel.Store.PathTags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SourceCategory" EntityType="DocOrganizerModel.Store.SourceCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sources" EntityType="DocOrganizerModel.Store.Sources" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SourceTag" EntityType="DocOrganizerModel.Store.SourceTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tags" EntityType="DocOrganizerModel.Store.Tags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WebHosts" EntityType="DocOrganizerModel.Store.WebHosts" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Categories_Parent" Association="DocOrganizerModel.Store.FK_Categories_Parent">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Categories1" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryTags_Categories" Association="DocOrganizerModel.Store.FK_CategoryTags_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="CategoryTags" EntitySet="CategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryTags_Tags" Association="DocOrganizerModel.Store.FK_CategoryTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="CategoryTags" EntitySet="CategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentCategories_Categories" Association="DocOrganizerModel.Store.FK_DocumentCategories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="DocumentCategories" EntitySet="DocumentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentCategories_Documents" Association="DocOrganizerModel.Store.FK_DocumentCategories_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DocumentCategories" EntitySet="DocumentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documents_Paths" Association="DocOrganizerModel.Store.FK_Documents_Paths">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documents_Sources" Association="DocOrganizerModel.Store.FK_Documents_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentTags_Documents" Association="DocOrganizerModel.Store.FK_DocumentTags_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DocumentTags" EntitySet="DocumentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentTags_Tags" Association="DocOrganizerModel.Store.FK_DocumentTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="DocumentTags" EntitySet="DocumentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmailSource_Sources" Association="DocOrganizerModel.Store.FK_EmailSource_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="EmailSource" EntitySet="EmailSource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathCategories_Categories" Association="DocOrganizerModel.Store.FK_PathCategories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="PathCategories" EntitySet="PathCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathCategories_Paths" Association="DocOrganizerModel.Store.FK_PathCategories_Paths">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="PathCategories" EntitySet="PathCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paths_Parent" Association="DocOrganizerModel.Store.FK_Paths_Parent">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="Paths1" EntitySet="Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paths_Sources" Association="DocOrganizerModel.Store.FK_Paths_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="Paths" EntitySet="Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathTags_Paths" Association="DocOrganizerModel.Store.FK_PathTags_Paths">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="PathTags" EntitySet="PathTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathTags_Tags" Association="DocOrganizerModel.Store.FK_PathTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="PathTags" EntitySet="PathTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceCategory_Categories" Association="DocOrganizerModel.Store.FK_SourceCategory_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="SourceCategory" EntitySet="SourceCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceCategory_Sources" Association="DocOrganizerModel.Store.FK_SourceCategory_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="SourceCategory" EntitySet="SourceCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceTag_Sources" Association="DocOrganizerModel.Store.FK_SourceTag_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="SourceTag" EntitySet="SourceTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceTag_Tags" Association="DocOrganizerModel.Store.FK_SourceTag_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="SourceTag" EntitySet="SourceTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebHosts_Sources" Association="DocOrganizerModel.Store.FK_WebHosts_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="WebHosts" EntitySet="WebHosts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CategoryTags">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentCategories">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="DocumentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Relevence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Query" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Fragent" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="DocTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="PathID" Type="uniqueidentifier" />
+          <Property Name="SourceID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="DocumentTags">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="DocumentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailSource">
+          <Key>
+            <PropertyRef Name="SourceID" />
+          </Key>
+          <Property Name="SourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="PathCategories">
+          <Key>
+            <PropertyRef Name="PathID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="PathID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Relevence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Paths">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="SourceID" Type="uniqueidentifier" />
+          <Property Name="ParentID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="PathTags">
+          <Key>
+            <PropertyRef Name="PathID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="PathID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SourceCategory">
+          <Key>
+            <PropertyRef Name="SourceID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="SourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Relevence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sources">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SourceTag">
+          <Key>
+            <PropertyRef Name="SourceID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="SourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Relevence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Importance" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebHosts">
+          <Key>
+            <PropertyRef Name="SourceID" />
+          </Key>
+          <Property Name="SourceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Host" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Scheme" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Port" Type="nvarchar" MaxLength="1024" />
+        </EntityType>
+        <Association Name="FK_Categories_Parent">
+          <End Role="Categories" Type="DocOrganizerModel.Store.Categories" Multiplicity="0..1" />
+          <End Role="Categories1" Type="DocOrganizerModel.Store.Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories1">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryTags_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Store.Categories" Multiplicity="1" />
+          <End Role="CategoryTags" Type="DocOrganizerModel.Store.CategoryTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryTags">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryTags_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Store.Tags" Multiplicity="1" />
+          <End Role="CategoryTags" Type="DocOrganizerModel.Store.CategoryTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentCategories_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Store.Categories" Multiplicity="1" />
+          <End Role="DocumentCategories" Type="DocOrganizerModel.Store.DocumentCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentCategories">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentCategories_Documents">
+          <End Role="Documents" Type="DocOrganizerModel.Store.Documents" Multiplicity="1" />
+          <End Role="DocumentCategories" Type="DocOrganizerModel.Store.DocumentCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentCategories">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documents_Paths">
+          <End Role="Paths" Type="DocOrganizerModel.Store.Paths" Multiplicity="0..1" />
+          <End Role="Documents" Type="DocOrganizerModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documents_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Store.Sources" Multiplicity="0..1" />
+          <End Role="Documents" Type="DocOrganizerModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentTags_Documents">
+          <End Role="Documents" Type="DocOrganizerModel.Store.Documents" Multiplicity="1" />
+          <End Role="DocumentTags" Type="DocOrganizerModel.Store.DocumentTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentTags">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentTags_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Store.Tags" Multiplicity="1" />
+          <End Role="DocumentTags" Type="DocOrganizerModel.Store.DocumentTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmailSource_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Store.Sources" Multiplicity="1" />
+          <End Role="EmailSource" Type="DocOrganizerModel.Store.EmailSource" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmailSource">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathCategories_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Store.Categories" Multiplicity="1" />
+          <End Role="PathCategories" Type="DocOrganizerModel.Store.PathCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathCategories">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathCategories_Paths">
+          <End Role="Paths" Type="DocOrganizerModel.Store.Paths" Multiplicity="1" />
+          <End Role="PathCategories" Type="DocOrganizerModel.Store.PathCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathCategories">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paths_Parent">
+          <End Role="Paths" Type="DocOrganizerModel.Store.Paths" Multiplicity="0..1" />
+          <End Role="Paths1" Type="DocOrganizerModel.Store.Paths" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Paths1">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paths_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Store.Sources" Multiplicity="0..1" />
+          <End Role="Paths" Type="DocOrganizerModel.Store.Paths" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Paths">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathTags_Paths">
+          <End Role="Paths" Type="DocOrganizerModel.Store.Paths" Multiplicity="1" />
+          <End Role="PathTags" Type="DocOrganizerModel.Store.PathTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathTags">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathTags_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Store.Tags" Multiplicity="1" />
+          <End Role="PathTags" Type="DocOrganizerModel.Store.PathTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceCategory_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Store.Categories" Multiplicity="1" />
+          <End Role="SourceCategory" Type="DocOrganizerModel.Store.SourceCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceCategory">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceCategory_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Store.Sources" Multiplicity="1" />
+          <End Role="SourceCategory" Type="DocOrganizerModel.Store.SourceCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceCategory">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceTag_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Store.Sources" Multiplicity="1" />
+          <End Role="SourceTag" Type="DocOrganizerModel.Store.SourceTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceTag">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceTag_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Store.Tags" Multiplicity="1" />
+          <End Role="SourceTag" Type="DocOrganizerModel.Store.SourceTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceTag">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebHosts_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Store.Sources" Multiplicity="1" />
+          <End Role="WebHosts" Type="DocOrganizerModel.Store.WebHosts" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WebHosts">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DocOrganizerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DocOrganizerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="DocOrganizerModel.Category" />
+          <EntitySet Name="CategoryTags" EntityType="DocOrganizerModel.CategoryTag" />
+          <EntitySet Name="DocumentCategories" EntityType="DocOrganizerModel.DocumentCategory" />
+          <EntitySet Name="Documents" EntityType="DocOrganizerModel.Document" />
+          <EntitySet Name="DocumentTags" EntityType="DocOrganizerModel.DocumentTag" />
+          <EntitySet Name="EmailSources" EntityType="DocOrganizerModel.EmailSource" />
+          <EntitySet Name="PathCategories" EntityType="DocOrganizerModel.PathCategory" />
+          <EntitySet Name="Paths" EntityType="DocOrganizerModel.Path" />
+          <EntitySet Name="PathTags" EntityType="DocOrganizerModel.PathTag" />
+          <EntitySet Name="SourceCategories" EntityType="DocOrganizerModel.SourceCategory" />
+          <EntitySet Name="Sources" EntityType="DocOrganizerModel.Source" />
+          <EntitySet Name="SourceTags" EntityType="DocOrganizerModel.SourceTag" />
+          <EntitySet Name="Tags" EntityType="DocOrganizerModel.Tag" />
+          <EntitySet Name="WebHosts" EntityType="DocOrganizerModel.WebHost" />
+          <AssociationSet Name="FK_Categories_Parent" Association="DocOrganizerModel.FK_Categories_Parent">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Categories1" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryTags_Categories" Association="DocOrganizerModel.FK_CategoryTags_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="CategoryTags" EntitySet="CategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentCategories_Categories" Association="DocOrganizerModel.FK_DocumentCategories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="DocumentCategories" EntitySet="DocumentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathCategories_Categories" Association="DocOrganizerModel.FK_PathCategories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="PathCategories" EntitySet="PathCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceCategory_Categories" Association="DocOrganizerModel.FK_SourceCategory_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="SourceCategory" EntitySet="SourceCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryTags_Tags" Association="DocOrganizerModel.FK_CategoryTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="CategoryTags" EntitySet="CategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentCategories_Documents" Association="DocOrganizerModel.FK_DocumentCategories_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DocumentCategories" EntitySet="DocumentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documents_Paths" Association="DocOrganizerModel.FK_Documents_Paths">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documents_Sources" Association="DocOrganizerModel.FK_Documents_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentTags_Documents" Association="DocOrganizerModel.FK_DocumentTags_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DocumentTags" EntitySet="DocumentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentTags_Tags" Association="DocOrganizerModel.FK_DocumentTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="DocumentTags" EntitySet="DocumentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmailSource_Sources" Association="DocOrganizerModel.FK_EmailSource_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="EmailSource" EntitySet="EmailSources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathCategories_Paths" Association="DocOrganizerModel.FK_PathCategories_Paths">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="PathCategories" EntitySet="PathCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paths_Parent" Association="DocOrganizerModel.FK_Paths_Parent">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="Paths1" EntitySet="Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paths_Sources" Association="DocOrganizerModel.FK_Paths_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="Paths" EntitySet="Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathTags_Paths" Association="DocOrganizerModel.FK_PathTags_Paths">
+            <End Role="Paths" EntitySet="Paths" />
+            <End Role="PathTags" EntitySet="PathTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PathTags_Tags" Association="DocOrganizerModel.FK_PathTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="PathTags" EntitySet="PathTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceCategory_Sources" Association="DocOrganizerModel.FK_SourceCategory_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="SourceCategory" EntitySet="SourceCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceTag_Sources" Association="DocOrganizerModel.FK_SourceTag_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="SourceTag" EntitySet="SourceTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebHosts_Sources" Association="DocOrganizerModel.FK_WebHosts_Sources">
+            <End Role="Sources" EntitySet="Sources" />
+            <End Role="WebHosts" EntitySet="WebHosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SourceTag_Tags" Association="DocOrganizerModel.FK_SourceTag_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="SourceTag" EntitySet="SourceTags" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ParentID" Type="Guid" />
+          <NavigationProperty Name="Categories1" Relationship="DocOrganizerModel.FK_Categories_Parent" FromRole="Categories" ToRole="Categories1" />
+          <NavigationProperty Name="Category1" Relationship="DocOrganizerModel.FK_Categories_Parent" FromRole="Categories1" ToRole="Categories" />
+          <NavigationProperty Name="CategoryTags" Relationship="DocOrganizerModel.FK_CategoryTags_Categories" FromRole="Categories" ToRole="CategoryTags" />
+          <NavigationProperty Name="DocumentCategories" Relationship="DocOrganizerModel.FK_DocumentCategories_Categories" FromRole="Categories" ToRole="DocumentCategories" />
+          <NavigationProperty Name="PathCategories" Relationship="DocOrganizerModel.FK_PathCategories_Categories" FromRole="Categories" ToRole="PathCategories" />
+          <NavigationProperty Name="SourceCategories" Relationship="DocOrganizerModel.FK_SourceCategory_Categories" FromRole="Categories" ToRole="SourceCategory" />
+        </EntityType>
+        <EntityType Name="CategoryTag">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="CategoryID" Type="Guid" Nullable="false" />
+          <Property Name="TagID" Type="Guid" Nullable="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="DocOrganizerModel.FK_CategoryTags_Categories" FromRole="CategoryTags" ToRole="Categories" />
+          <NavigationProperty Name="Tag" Relationship="DocOrganizerModel.FK_CategoryTags_Tags" FromRole="CategoryTags" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="DocumentCategory">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="DocumentID" Type="Guid" Nullable="false" />
+          <Property Name="CategoryID" Type="Guid" Nullable="false" />
+          <Property Name="Relevence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="DocOrganizerModel.FK_DocumentCategories_Categories" FromRole="DocumentCategories" ToRole="Categories" />
+          <NavigationProperty Name="Document" Relationship="DocOrganizerModel.FK_DocumentCategories_Documents" FromRole="DocumentCategories" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Query" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Fragent" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="DocTimestamp" Type="DateTime" Nullable="false" />
+          <Property Name="PathID" Type="Guid" />
+          <Property Name="SourceID" Type="Guid" />
+          <NavigationProperty Name="DocumentCategories" Relationship="DocOrganizerModel.FK_DocumentCategories_Documents" FromRole="Documents" ToRole="DocumentCategories" />
+          <NavigationProperty Name="Path" Relationship="DocOrganizerModel.FK_Documents_Paths" FromRole="Documents" ToRole="Paths" />
+          <NavigationProperty Name="Source" Relationship="DocOrganizerModel.FK_Documents_Sources" FromRole="Documents" ToRole="Sources" />
+          <NavigationProperty Name="DocumentTags" Relationship="DocOrganizerModel.FK_DocumentTags_Documents" FromRole="Documents" ToRole="DocumentTags" />
+        </EntityType>
+        <EntityType Name="DocumentTag">
+          <Key>
+            <PropertyRef Name="DocumentID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="DocumentID" Type="Guid" Nullable="false" />
+          <Property Name="TagID" Type="Guid" Nullable="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Document" Relationship="DocOrganizerModel.FK_DocumentTags_Documents" FromRole="DocumentTags" ToRole="Documents" />
+          <NavigationProperty Name="Tag" Relationship="DocOrganizerModel.FK_DocumentTags_Tags" FromRole="DocumentTags" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="EmailSource">
+          <Key>
+            <PropertyRef Name="SourceID" />
+          </Key>
+          <Property Name="SourceID" Type="Guid" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Source" Relationship="DocOrganizerModel.FK_EmailSource_Sources" FromRole="EmailSource" ToRole="Sources" />
+        </EntityType>
+        <EntityType Name="PathCategory">
+          <Key>
+            <PropertyRef Name="PathID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="PathID" Type="Guid" Nullable="false" />
+          <Property Name="CategoryID" Type="Guid" Nullable="false" />
+          <Property Name="Relevence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="DocOrganizerModel.FK_PathCategories_Categories" FromRole="PathCategories" ToRole="Categories" />
+          <NavigationProperty Name="Path" Relationship="DocOrganizerModel.FK_PathCategories_Paths" FromRole="PathCategories" ToRole="Paths" />
+        </EntityType>
+        <EntityType Name="Path">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="SourceID" Type="Guid" />
+          <Property Name="ParentID" Type="Guid" />
+          <NavigationProperty Name="Documents" Relationship="DocOrganizerModel.FK_Documents_Paths" FromRole="Paths" ToRole="Documents" />
+          <NavigationProperty Name="PathCategories" Relationship="DocOrganizerModel.FK_PathCategories_Paths" FromRole="Paths" ToRole="PathCategories" />
+          <NavigationProperty Name="Paths1" Relationship="DocOrganizerModel.FK_Paths_Parent" FromRole="Paths" ToRole="Paths1" />
+          <NavigationProperty Name="Path1" Relationship="DocOrganizerModel.FK_Paths_Parent" FromRole="Paths1" ToRole="Paths" />
+          <NavigationProperty Name="Source" Relationship="DocOrganizerModel.FK_Paths_Sources" FromRole="Paths" ToRole="Sources" />
+          <NavigationProperty Name="PathTags" Relationship="DocOrganizerModel.FK_PathTags_Paths" FromRole="Paths" ToRole="PathTags" />
+        </EntityType>
+        <EntityType Name="PathTag">
+          <Key>
+            <PropertyRef Name="PathID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="PathID" Type="Guid" Nullable="false" />
+          <Property Name="TagID" Type="Guid" Nullable="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Path" Relationship="DocOrganizerModel.FK_PathTags_Paths" FromRole="PathTags" ToRole="Paths" />
+          <NavigationProperty Name="Tag" Relationship="DocOrganizerModel.FK_PathTags_Tags" FromRole="PathTags" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="SourceCategory">
+          <Key>
+            <PropertyRef Name="SourceID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="SourceID" Type="Guid" Nullable="false" />
+          <Property Name="CategoryID" Type="Guid" Nullable="false" />
+          <Property Name="Relevence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="DocOrganizerModel.FK_SourceCategory_Categories" FromRole="SourceCategory" ToRole="Categories" />
+          <NavigationProperty Name="Source" Relationship="DocOrganizerModel.FK_SourceCategory_Sources" FromRole="SourceCategory" ToRole="Sources" />
+        </EntityType>
+        <EntityType Name="Source">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="DocOrganizerModel.FK_Documents_Sources" FromRole="Sources" ToRole="Documents" />
+          <NavigationProperty Name="EmailSource" Relationship="DocOrganizerModel.FK_EmailSource_Sources" FromRole="Sources" ToRole="EmailSource" />
+          <NavigationProperty Name="Paths" Relationship="DocOrganizerModel.FK_Paths_Sources" FromRole="Sources" ToRole="Paths" />
+          <NavigationProperty Name="SourceCategories" Relationship="DocOrganizerModel.FK_SourceCategory_Sources" FromRole="Sources" ToRole="SourceCategory" />
+          <NavigationProperty Name="SourceTags" Relationship="DocOrganizerModel.FK_SourceTag_Sources" FromRole="Sources" ToRole="SourceTag" />
+          <NavigationProperty Name="WebHost" Relationship="DocOrganizerModel.FK_WebHosts_Sources" FromRole="Sources" ToRole="WebHosts" />
+        </EntityType>
+        <EntityType Name="SourceTag">
+          <Key>
+            <PropertyRef Name="SourceID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="SourceID" Type="Guid" Nullable="false" />
+          <Property Name="TagID" Type="Guid" Nullable="false" />
+          <Property Name="Relevence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Source" Relationship="DocOrganizerModel.FK_SourceTag_Sources" FromRole="SourceTag" ToRole="Sources" />
+          <NavigationProperty Name="Tag" Relationship="DocOrganizerModel.FK_SourceTag_Tags" FromRole="SourceTag" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Importance" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CategoryTags" Relationship="DocOrganizerModel.FK_CategoryTags_Tags" FromRole="Tags" ToRole="CategoryTags" />
+          <NavigationProperty Name="DocumentTags" Relationship="DocOrganizerModel.FK_DocumentTags_Tags" FromRole="Tags" ToRole="DocumentTags" />
+          <NavigationProperty Name="PathTags" Relationship="DocOrganizerModel.FK_PathTags_Tags" FromRole="Tags" ToRole="PathTags" />
+          <NavigationProperty Name="SourceTags" Relationship="DocOrganizerModel.FK_SourceTag_Tags" FromRole="Tags" ToRole="SourceTag" />
+        </EntityType>
+        <EntityType Name="WebHost">
+          <Key>
+            <PropertyRef Name="SourceID" />
+          </Key>
+          <Property Name="SourceID" Type="Guid" Nullable="false" />
+          <Property Name="Host" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Scheme" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Port" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Source" Relationship="DocOrganizerModel.FK_WebHosts_Sources" FromRole="WebHosts" ToRole="Sources" />
+        </EntityType>
+        <Association Name="FK_Categories_Parent">
+          <End Role="Categories" Type="DocOrganizerModel.Category" Multiplicity="0..1" />
+          <End Role="Categories1" Type="DocOrganizerModel.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Categories1">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryTags_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Category" Multiplicity="1" />
+          <End Role="CategoryTags" Type="DocOrganizerModel.CategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryTags">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentCategories_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Category" Multiplicity="1" />
+          <End Role="DocumentCategories" Type="DocOrganizerModel.DocumentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentCategories">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathCategories_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Category" Multiplicity="1" />
+          <End Role="PathCategories" Type="DocOrganizerModel.PathCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathCategories">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceCategory_Categories">
+          <End Role="Categories" Type="DocOrganizerModel.Category" Multiplicity="1" />
+          <End Role="SourceCategory" Type="DocOrganizerModel.SourceCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceCategory">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryTags_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Tag" Multiplicity="1" />
+          <End Role="CategoryTags" Type="DocOrganizerModel.CategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentCategories_Documents">
+          <End Role="Documents" Type="DocOrganizerModel.Document" Multiplicity="1" />
+          <End Role="DocumentCategories" Type="DocOrganizerModel.DocumentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentCategories">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documents_Paths">
+          <End Role="Paths" Type="DocOrganizerModel.Path" Multiplicity="0..1" />
+          <End Role="Documents" Type="DocOrganizerModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documents_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Source" Multiplicity="0..1" />
+          <End Role="Documents" Type="DocOrganizerModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentTags_Documents">
+          <End Role="Documents" Type="DocOrganizerModel.Document" Multiplicity="1" />
+          <End Role="DocumentTags" Type="DocOrganizerModel.DocumentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentTags">
+              <PropertyRef Name="DocumentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentTags_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Tag" Multiplicity="1" />
+          <End Role="DocumentTags" Type="DocOrganizerModel.DocumentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmailSource_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Source" Multiplicity="1" />
+          <End Role="EmailSource" Type="DocOrganizerModel.EmailSource" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmailSource">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathCategories_Paths">
+          <End Role="Paths" Type="DocOrganizerModel.Path" Multiplicity="1" />
+          <End Role="PathCategories" Type="DocOrganizerModel.PathCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathCategories">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paths_Parent">
+          <End Role="Paths" Type="DocOrganizerModel.Path" Multiplicity="0..1" />
+          <End Role="Paths1" Type="DocOrganizerModel.Path" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Paths1">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paths_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Source" Multiplicity="0..1" />
+          <End Role="Paths" Type="DocOrganizerModel.Path" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Paths">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathTags_Paths">
+          <End Role="Paths" Type="DocOrganizerModel.Path" Multiplicity="1" />
+          <End Role="PathTags" Type="DocOrganizerModel.PathTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paths">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathTags">
+              <PropertyRef Name="PathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PathTags_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Tag" Multiplicity="1" />
+          <End Role="PathTags" Type="DocOrganizerModel.PathTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PathTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceCategory_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Source" Multiplicity="1" />
+          <End Role="SourceCategory" Type="DocOrganizerModel.SourceCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceCategory">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceTag_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Source" Multiplicity="1" />
+          <End Role="SourceTag" Type="DocOrganizerModel.SourceTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceTag">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebHosts_Sources">
+          <End Role="Sources" Type="DocOrganizerModel.Source" Multiplicity="1" />
+          <End Role="WebHosts" Type="DocOrganizerModel.WebHost" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sources">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WebHosts">
+              <PropertyRef Name="SourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SourceTag_Tags">
+          <End Role="Tags" Type="DocOrganizerModel.Tag" Multiplicity="1" />
+          <End Role="SourceTag" Type="DocOrganizerModel.SourceTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SourceTag">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DocOrganizerModelStoreContainer" CdmEntityContainer="DocOrganizerEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="DocOrganizerModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoryTags">
+            <EntityTypeMapping TypeName="DocOrganizerModel.CategoryTag">
+              <MappingFragment StoreEntitySet="CategoryTags">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentCategories">
+            <EntityTypeMapping TypeName="DocOrganizerModel.DocumentCategory">
+              <MappingFragment StoreEntitySet="DocumentCategories">
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Relevence" ColumnName="Relevence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="DocOrganizerModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Query" ColumnName="Query" />
+                <ScalarProperty Name="Fragent" ColumnName="Fragent" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DocTimestamp" ColumnName="DocTimestamp" />
+                <ScalarProperty Name="PathID" ColumnName="PathID" />
+                <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentTags">
+            <EntityTypeMapping TypeName="DocOrganizerModel.DocumentTag">
+              <MappingFragment StoreEntitySet="DocumentTags">
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailSources">
+            <EntityTypeMapping TypeName="DocOrganizerModel.EmailSource">
+              <MappingFragment StoreEntitySet="EmailSource">
+                <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PathCategories">
+            <EntityTypeMapping TypeName="DocOrganizerModel.PathCategory">
+              <MappingFragment StoreEntitySet="PathCategories">
+                <ScalarProperty Name="PathID" ColumnName="PathID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Relevence" ColumnName="Relevence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paths">
+            <EntityTypeMapping TypeName="DocOrganizerModel.Path">
+              <MappingFragment StoreEntitySet="Paths">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PathTags">
+            <EntityTypeMapping TypeName="DocOrganizerModel.PathTag">
+              <MappingFragment StoreEntitySet="PathTags">
+                <ScalarProperty Name="PathID" ColumnName="PathID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SourceCategories">
+            <EntityTypeMapping TypeName="DocOrganizerModel.SourceCategory">
+              <MappingFragment StoreEntitySet="SourceCategory">
+                <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Relevence" ColumnName="Relevence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sources">
+            <EntityTypeMapping TypeName="DocOrganizerModel.Source">
+              <MappingFragment StoreEntitySet="Sources">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SourceTags">
+            <EntityTypeMapping TypeName="DocOrganizerModel.SourceTag">
+              <MappingFragment StoreEntitySet="SourceTag">
+                <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="Relevence" ColumnName="Relevence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="DocOrganizerModel.Tag">
+              <MappingFragment StoreEntitySet="Tags">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Importance" ColumnName="Importance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebHosts">
+            <EntityTypeMapping TypeName="DocOrganizerModel.WebHost">
+              <MappingFragment StoreEntitySet="WebHosts">
+                <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="Scheme" ColumnName="Scheme" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="DocOrganizerModel.Category" Width="1.5" PointX="0.75" PointY="6.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.CategoryTag" Width="1.5" PointX="6" PointY="6.375" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.DocumentCategory" Width="1.5" PointX="7.5" PointY="12.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.Document" Width="1.5" PointX="5.25" PointY="12.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.DocumentTag" Width="1.5" PointX="10.5" PointY="13.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.EmailSource" Width="1.5" PointX="3" PointY="12.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.PathCategory" Width="1.5" PointX="5.25" PointY="17.125" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.Path" Width="1.5" PointX="3" PointY="14.625" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.PathTag" Width="1.5" PointX="8.25" PointY="15.125" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.SourceCategory" Width="1.5" PointX="3" PointY="9.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.Source" Width="1.5" PointX="0.75" PointY="10.875" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.SourceTag" Width="1.5" PointX="6" PointY="9.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.Tag" Width="1.5" PointX="3.75" PointY="4.875" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocOrganizerModel.WebHost" Width="1.5" PointX="3" PointY="23.75" Height="1.9802864583333388" IsExpanded="true" />
+        <AssociationConnector Association="DocOrganizerModel.FK_Categories_Parent" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.2819230769230767" PointY="9.6917936197916674" />
+          <ConnectorPoint PointX="1.2819230769230767" PointY="9.9417936197916674" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="9.9417936197916674" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="9.6917936197916674" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_CategoryTags_Categories" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.9249886067708353" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="7.9249886067708344" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="7.9249886067708353" />
+          <ConnectorPoint PointX="6" PointY="7.9249886067708353" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_DocumentCategories_Categories" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.8026432291666659" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="8.8026432291666659" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="8.8026432291666659" />
+          <ConnectorPoint PointX="8.28125" PointY="8.8026432291666659" />
+          <ConnectorPoint PointX="8.28125" PointY="12.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_PathCategories_Categories" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2499999999999996" PointY="9.6917936197916674" />
+          <ConnectorPoint PointX="2.625" PointY="10.066793619791667" />
+          <ConnectorPoint PointX="2.625" PointY="18.367289539062497" />
+          <ConnectorPoint PointX="5.25" PointY="18.367289539062497" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_SourceCategory_Categories" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.4396443098958329" />
+          <ConnectorPoint PointX="3" PointY="9.4396443098958329" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_CategoryTags_Tags" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="6.9035953776041694" />
+          <ConnectorPoint PointX="6" PointY="6.9035953776041694" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_DocumentCategories_Documents" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="13.365143229166666" />
+          <ConnectorPoint PointX="7.5" PointY="13.365143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_Documents_Paths" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.2256982421875" />
+          <ConnectorPoint PointX="5.25" PointY="15.2256982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_Documents_Sources" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.740143229166666" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.740143229166666" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.740143229166666" />
+          <ConnectorPoint PointX="5.59375" PointY="11.740143229166666" />
+          <ConnectorPoint PointX="5.59375" PointY="12.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_DocumentTags_Documents" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="14.677643229166666" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="14.677643229166666" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="14.677643229166666" />
+          <ConnectorPoint PointX="10.5" PointY="14.677643229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_DocumentTags_Tags" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="5.59375" />
+          <ConnectorPoint PointX="11.25" PointY="5.59375" />
+          <ConnectorPoint PointX="11.25" PointY="13.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_EmailSource_Sources" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.937246093750002" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="12.937246093750002" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="12.937246093750002" />
+          <ConnectorPoint PointX="3" PointY="12.937246093750002" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_PathCategories_Paths" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.345896809895834" />
+          <ConnectorPoint PointX="5.25" PointY="17.345896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_Paths_Parent" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.5319230769230767" PointY="17.566793619791667" />
+          <ConnectorPoint PointX="3.5319230769230767" PointY="17.816793619791667" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="17.816793619791667" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="17.566793619791667" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_Paths_Sources" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="13.624492187500003" />
+          <ConnectorPoint PointX="1.5" PointY="16.095896809895834" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="16.095896809895834" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="16.095896809895834" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="16.095896809895834" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="16.095896809895834" />
+          <ConnectorPoint PointX="3" PointY="16.095896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_PathTags_Paths" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.497091471354167" />
+          <ConnectorPoint PointX="8.25" PointY="16.497091471354167" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_PathTags_Tags" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="5.9843775000000008" />
+          <ConnectorPoint PointX="9.40625" PointY="5.9843775000000008" />
+          <ConnectorPoint PointX="9.40625" PointY="15.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_SourceCategory_Sources" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.052643229166666" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.052643229166666" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.052643229166666" />
+          <ConnectorPoint PointX="3" PointY="11.052643229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_SourceTag_Sources" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.453962843749999" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.453962843749999" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.453962843749999" />
+          <ConnectorPoint PointX="7.125" PointY="11.453962843749999" />
+          <ConnectorPoint PointX="7.125" PointY="11.230286458333332" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_WebHosts_Sources" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="13.624492187500003" />
+          <ConnectorPoint PointX="1.9062525" PointY="24.740143229166669" />
+          <ConnectorPoint PointX="3" PointY="24.740143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="DocOrganizerModel.FK_SourceTag_Tags" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="7.4321907552083388" />
+          <ConnectorPoint PointX="5.625" PointY="7.8071907552083388" />
+          <ConnectorPoint PointX="5.625" PointY="10.240143229166666" />
+          <ConnectorPoint PointX="6" PointY="10.240143229166666" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
